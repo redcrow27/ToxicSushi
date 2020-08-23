@@ -1,8 +1,12 @@
 package step_definitions;
 
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import step_impl.CommonPageImpl;
+import utils.Driver;
 
 public class CommonPageTest extends CommonPageImpl {
-    //Here you will store all those steps that can be used in any pages and doesnt belong to any of them
+
+
 
 }
