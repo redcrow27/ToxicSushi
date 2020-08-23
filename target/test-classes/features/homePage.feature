@@ -16,7 +16,7 @@ Feature: Home Page tests
     When I login the page
     Then I verify "Hi message" as "Hi, erdi"
 
-  @hey
+
   Scenario: Sign out test
     Given I login the page
     When I click "Sign out" button
@@ -37,11 +37,18 @@ Feature: Home Page tests
     And I click "I'm hungry" button
     Then I verify "Search restaurants" is Displayed
 
-  @hey
+
   Scenario: Show me more button test
     Given I login the page
     And I click "Show me more" button
     Then I verify "We're happy to hear from you" is Displayed
+
+
+  Scenario: Search Restaurants test - Search button
+    Given I login the page
+    When I click "Search restaurants" button
+    Then I verify Search restaurants page open
+
 
 
 

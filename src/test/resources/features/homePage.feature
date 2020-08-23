@@ -44,5 +44,12 @@ Feature: Home Page tests
     Then I verify "We're happy to hear from you" is Displayed
 
 
+  Scenario: Search Restaurants test - Search button
+    Given I login the page
+    When I click "Search restaurants" button
+    Then I verify Search restaurants page open
+
+
+
 
 

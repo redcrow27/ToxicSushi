@@ -59,6 +59,9 @@ public class HomePage {
     @FindBy(xpath = "//div[@id='comment-header']")
     public WebElement commentHeader;
 
+    @FindBy(xpath = "//h2[text()='Search restaurants']")
+    public WebElement searchResHeader;
+
     public void logIn(String username, String password) {
         SeleniumUtils.click(squareBox);
         SeleniumUtils.click(signInBtn);

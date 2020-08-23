@@ -86,6 +86,8 @@ public class HomePageTest extends HomePageImpl {
                 break;
             case "show me more": SeleniumUtils.click(homePage.showMeMoreBtn);
                 break;
+            case "search restaurants": SeleniumUtils.click(homePage.headerLinks.get(1));
+                break;
             default:
                 System.out.println("Invalid button");
         }
@@ -133,5 +135,11 @@ public class HomePageTest extends HomePageImpl {
                 System.out.println("Invalid message");
         }
         CucumberUtils.logInfo(message + " is NOT displayed. Test completed. Screenshot: ", true);
+    }
+
+    @Then("I verify Search restaurants page open")
+    public void iVerifySearchRestaurantsPageOpen() {
+        Assert.assertEquals(ConfigReader.readProperty("searchRestaurantUrl", propertyPath), Driver.getDriver().getCurrentUrl());
+        CucumberUtils.logInfo("Expected Url: " + ConfigReader.readProperty("searchRestaurantUrl", propertyPath) + " | Actual Url: " + Driver.getDriver().getCurrentUrl(), true);
     }
 }
