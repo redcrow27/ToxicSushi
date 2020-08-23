@@ -95,4 +95,14 @@ public class HomePageTest extends HomePageImpl {
         CucumberUtils.logInfo(message + " message is displayed: " + homePage.displayName.isDisplayed(), true);
     }
 
+    @Then("I verify navigation buttons displayed following data:")
+    public void i_verify_navigation_buttons_displayed_following_data(List<String> dataTable) {
+        HomePage homePage = new HomePage();
+        for(int i = 0; i < dataTable.size(); i++) {
+            Assert.assertEquals(dataTable.get(i), homePage.headerLinks.get(i).getText());
+            CucumberUtils.logInfo("Expected navigation button: " + dataTable.get(i) + " | Actual navigation button: " + homePage.headerLinks.get(i).getText(), false);
+        }
+        CucumberUtils.logInfo("Test completed. Screenshot: ", true);
+    }
+
 }

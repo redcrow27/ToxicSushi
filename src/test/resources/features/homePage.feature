@@ -21,4 +21,12 @@ Feature: Home Page tests
     When I click "Sign out" button
     Then I verify message does not exist as "Hi, erdi"
 
+  Scenario: Navigation bar test
+    Given I login the page
+    Then I verify navigation buttons displayed following data:
+      |Home|
+      |Search Restaurants|
+      |Search Fun Places |
+      |My Favorites      |
+
 

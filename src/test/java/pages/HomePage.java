@@ -6,6 +6,8 @@ import org.openqa.selenium.support.PageFactory;
 import utils.Driver;
 import utils.SeleniumUtils;
 
+import java.util.List;
+
 /*
 All WebElements, also known as page objects of Home Page are stored in this class. Page Factory is used to initialize
 our objects so we can use them. Driver.getDriver() method is used to connect our WebElements with that driver.
@@ -42,7 +44,8 @@ public class HomePage {
     @FindBy(xpath = "//a[text()='Sign out']")
     public WebElement signOutBtn;
 
-
+    @FindBy(className = "header_links")
+    public List<WebElement> headerLinks;
 
     public void logIn(String username, String password) {
         SeleniumUtils.click(squareBox);

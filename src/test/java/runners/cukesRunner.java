@@ -19,7 +19,7 @@ dryRun=true - is used to generated steps for unimplemented steps without startin
                 "json:target/cucumber-reports/CucumberTestReport.json"
         },
         tags = "",
-        dryRun = true
+        dryRun = false
 )
 public class cukesRunner{
 }
