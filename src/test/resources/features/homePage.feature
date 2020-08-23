@@ -20,7 +20,7 @@ Feature: Home Page tests
   Scenario: Sign out test
     Given I login the page
     When I click "Sign out" button
-    Then I verify "Hi, erdi" is Displayed
+    Then I verify "Hi, erdi" is not Displayed
 
 
   Scenario: Navigation bar test
@@ -36,6 +36,13 @@ Feature: Home Page tests
     Given I login the page
     And I click "I'm hungry" button
     Then I verify "Search restaurants" is Displayed
+
+
+  Scenario: Show me more button test
+    Given I login the page
+    And I click "Show me more" button
+    Then I verify "We're happy to hear from you" is Displayed
+
 
 
 

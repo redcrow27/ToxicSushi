@@ -53,6 +53,12 @@ public class HomePage {
     @FindBy(id = "home_search_box")
     public WebElement searchHeader;
 
+    @FindBy(xpath = "//a[text()=' Show me more ']")
+    public WebElement showMeMoreBtn;
+
+    @FindBy(xpath = "//div[@id='comment-header']")
+    public WebElement commentHeader;
+
     public void logIn(String username, String password) {
         SeleniumUtils.click(squareBox);
         SeleniumUtils.click(signInBtn);

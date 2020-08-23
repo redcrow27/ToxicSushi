@@ -36,7 +36,7 @@ formatter.scenario({
       "name": "@homePage"
     },
     {
-      "name": "@nav"
+      "name": "@hey"
     }
   ]
 });
@@ -57,20 +57,19 @@ formatter.step({
 formatter.match({
   "location": "step_definitions.HomePageTest.iClickButton(java.lang.String)"
 });
-formatter.write("08-23-2020 16:27:31 INFO:  Click: Sign out button");
+formatter.write("08-23-2020 16:52:11 INFO:  Click: Sign out button");
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I verify \"Hi, erdi\" is Displayed",
+  "name": "I verify \"Hi, erdi\" is not Displayed",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "step_definitions.HomePageTest.iVerifyIsDisplayed(java.lang.String)"
+  "location": "step_definitions.HomePageTest.iVerifyIsNotDisplayed(java.lang.String)"
 });
-formatter.write("08-23-2020 16:27:31 INFO: Hi, erdi is displayed: false");
-formatter.write("08-23-2020 16:27:31 INFO:  Test completed. Screenshot: ");
-formatter.embedding("image/png", "embedded0.png", "Screenshot | 08-23-2020 16:27:31");
+formatter.write("08-23-2020 16:52:11 INFO: Hi, erdi is NOT displayed. And test completed. Screenshot: ");
+formatter.embedding("image/png", "embedded0.png", "Screenshot | 08-23-2020 16:52:11");
 formatter.result({
   "status": "passed"
 });
@@ -96,7 +95,7 @@ formatter.result({
   "status": "passed"
 });
 formatter.scenario({
-  "name": "I\u0027m hungry button test",
+  "name": "Show me more button test",
   "description": "",
   "keyword": "Scenario",
   "tags": [
@@ -104,7 +103,7 @@ formatter.scenario({
       "name": "@homePage"
     },
     {
-      "name": "@nav"
+      "name": "@hey"
     }
   ]
 });
@@ -119,26 +118,25 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I click \"I\u0027m hungry\" button",
+  "name": "I click \"Show me more\" button",
   "keyword": "And "
 });
 formatter.match({
   "location": "step_definitions.HomePageTest.iClickButton(java.lang.String)"
 });
-formatter.write("08-23-2020 16:27:31 INFO:  Click: I\u0027m hungry button");
+formatter.write("08-23-2020 16:52:11 INFO:  Click: Show me more button");
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I verify \"Search restaurants\" is Displayed",
+  "name": "I verify \"We\u0027re happy to hear from you\" is Displayed",
   "keyword": "Then "
 });
 formatter.match({
   "location": "step_definitions.HomePageTest.iVerifyIsDisplayed(java.lang.String)"
 });
-formatter.write("08-23-2020 16:27:31 INFO: Search restaurants is displayed: true");
-formatter.write("08-23-2020 16:27:31 INFO:  Test completed. Screenshot: ");
-formatter.embedding("image/png", "embedded1.png", "Screenshot | 08-23-2020 16:27:31");
+formatter.write("08-23-2020 16:52:11 INFO: We\u0027re happy to hear from you is displayed. And test completed. Screenshot: ");
+formatter.embedding("image/png", "embedded1.png", "Screenshot | 08-23-2020 16:52:11");
 formatter.result({
   "status": "passed"
 });
