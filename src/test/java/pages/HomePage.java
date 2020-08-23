@@ -30,6 +30,20 @@ public class HomePage {
     @FindBy(id = "signin_submit")
     public  WebElement submitBtn;
 
+    @FindBy(id = "errMsg")
+    public WebElement errorMsg;
+
+    @FindBy(id = "displayName")
+    public WebElement displayName;
+
+    @FindBy(xpath = "(//span[@aria-hidden='true'])[2]")
+    public WebElement closeBtn;
+
+    @FindBy(xpath = "//a[text()='Sign out']")
+    public WebElement signOutBtn;
+
+
+
     public void logIn(String username, String password) {
         SeleniumUtils.click(squareBox);
         SeleniumUtils.click(signInBtn);
@@ -37,6 +51,13 @@ public class HomePage {
         SeleniumUtils.sendKeys(passwordField, password);
         SeleniumUtils.click(submitBtn);
     }
+
+    public void clearLogInFields(){
+        emailField.clear();
+        passwordField.clear();
+    }
+
+
 
 
 
