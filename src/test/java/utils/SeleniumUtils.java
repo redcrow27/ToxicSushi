@@ -6,7 +6,9 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 /**
  * All Selenium related re-usable methods are stored in this Class
@@ -87,6 +89,18 @@ public class SeleniumUtils {
                 }
             }catch (Exception e){
                 e.printStackTrace();
+            }
+        }
+    }
+
+    public static void windowHandles() {
+        String mainWindowHandle = Driver.getDriver().getWindowHandle();
+        Set<String> windowHandles = Driver.getDriver().getWindowHandles();
+        Iterator<String> iterator = windowHandles.iterator();
+        while (iterator.hasNext()) {
+            String child_window = iterator.next();
+            if (!mainWindowHandle.equals(child_window)) {
+                Driver.getDriver().switchTo().window(child_window);
             }
         }
     }

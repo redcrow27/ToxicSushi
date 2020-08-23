@@ -70,10 +70,6 @@ public class HomePage {
         SeleniumUtils.click(submitBtn);
     }
 
-    public void clearLogInFields(){
-        emailField.clear();
-        passwordField.clear();
-    }
 
 
 

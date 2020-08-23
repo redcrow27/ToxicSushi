@@ -47,6 +47,7 @@ public class HomePageTest extends HomePageImpl {
         HomePage homePage = new HomePage();
         String username = "hello@gmail.com";
         String password = "12345678";
+        SeleniumUtils.sleep(1000);
         homePage.logIn(username, password);
     }
 
@@ -66,11 +67,6 @@ public class HomePageTest extends HomePageImpl {
         CucumberUtils.logInfo(" Message type: " + messageType + " Result: " + message, true);
     }
 
-    @Then("I clear the fields")
-    public void i_clear_the_fields() {
-       HomePage homePage = new HomePage();
-       homePage.clearLogInFields();
-    }
 
     @And("I click {string} button")
     public void iClickButton(String button) {
