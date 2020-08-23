@@ -47,6 +47,12 @@ public class HomePage {
     @FindBy(className = "header_links")
     public List<WebElement> headerLinks;
 
+    @FindBy(xpath = "(//a[@class='btn btn-full'])[1]")
+    public WebElement imHungryBtn;
+
+    @FindBy(id = "home_search_box")
+    public WebElement searchHeader;
+
     public void logIn(String username, String password) {
         SeleniumUtils.click(squareBox);
         SeleniumUtils.click(signInBtn);

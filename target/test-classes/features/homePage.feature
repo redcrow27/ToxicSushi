@@ -16,18 +16,26 @@ Feature: Home Page tests
     When I login the page
     Then I verify "Hi message" as "Hi, erdi"
 
+  @nav
   Scenario: Sign out test
     Given I login the page
     When I click "Sign out" button
-    Then I verify message does not exist as "Hi, erdi"
+    Then I verify "Hi, erdi" is Displayed
 
-  @bar
+
   Scenario: Navigation bar test
-    Given I login the page
+   Given I login the page
     Then I verify navigation buttons displayed following data:
       |Home|
       |Search Restaurants|
       |Search Fun Places |
       |My Favorites      |
+
+  @nav
+  Scenario: I'm hungry button test
+    Given I login the page
+    And I click "I'm hungry" button
+    Then I verify "Search restaurants" is Displayed
+
 
 

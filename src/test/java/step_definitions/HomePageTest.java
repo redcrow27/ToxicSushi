@@ -82,6 +82,8 @@ public class HomePageTest extends HomePageImpl {
                 SeleniumUtils.click(homePage.squareBox);
                 SeleniumUtils.click(homePage.signOutBtn);
                 break;
+            case "i'm hungry": SeleniumUtils.click(homePage.imHungryBtn);
+                break;
             default:
                 System.out.println("Invalid button");
         }
@@ -105,4 +107,19 @@ public class HomePageTest extends HomePageImpl {
         CucumberUtils.logInfo("Test completed. Screenshot: ", true);
     }
 
+    @Then("I verify {string} is Displayed")
+    public void iVerifyIsDisplayed(String message) {
+        HomePage homePage = new HomePage();
+        switch (message.toLowerCase()) {
+            case "hi, erdi": Assert.assertFalse(homePage.displayName.isDisplayed());
+                CucumberUtils.logInfo(message + " is displayed: " + homePage.displayName.isDisplayed(), false);
+                break;
+            case "search restaurants": Assert.assertTrue(homePage.searchHeader.isDisplayed());
+                CucumberUtils.logInfo(message + " is displayed: " + homePage.displayName.isDisplayed(), false);
+                break;
+            default:
+                System.out.println("Invalid message");
+        }
+        CucumberUtils.logInfo(" Test completed. Screenshot: ", true);
+    }
 }
