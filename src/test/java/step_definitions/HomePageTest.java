@@ -88,5 +88,11 @@ public class HomePageTest extends HomePageImpl {
         CucumberUtils.logInfo(" Click: " + button + " button" , false);
     }
 
+    @Then("I verify message does not exist as {string}")
+    public void iVerifyMessageDoesNotExistAs(String message) {
+        HomePage homePage = new HomePage();
+        Assert.assertFalse(homePage.displayName.isDisplayed());
+        CucumberUtils.logInfo(message + " message is displayed: " + homePage.displayName.isDisplayed(), true);
+    }
 
 }
