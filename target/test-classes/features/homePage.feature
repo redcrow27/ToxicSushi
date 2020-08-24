@@ -8,16 +8,11 @@ Feature: Home Page tests
   Scenario: Verify Title of the Page
     Then I verify title is "Toxic Sushi"
 
-    @hey
   Scenario: Log in credentials test
     Given I verify "Hi message" as "Hi, erdi"
     And I click "Sign out" button
     Given I login with invalid  credentials
     Then I verify "Error message" as "Your email or password is incorrect! Please try again!"
-#    And I clear the fields
-#    And I click "close" button
-#    When I login the page
-#    Then I verify "Hi message" as "Hi, erdi"
 
   Scenario: Sign out test
     When I click "Sign out" button

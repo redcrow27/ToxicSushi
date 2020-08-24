@@ -1,11 +1,11 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/homePage.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/searchResPage.feature");
 formatter.feature({
-  "name": "Home Page tests",
+  "name": "Search Restaurant Page tests",
   "description": "",
   "keyword": "Feature",
   "tags": [
     {
-      "name": "@homePage"
+      "name": "@searchRestaurantPage"
     }
   ]
 });
@@ -28,70 +28,52 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I login the page",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "step_definitions.HomePageTest.i_login_the_page()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "Log in credentials test",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@homePage"
-    },
-    {
-      "name": "@hey"
-    }
-  ]
-});
-formatter.step({
-  "name": "I verify \"Hi message\" as \"Hi, erdi\"",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "step_definitions.HomePageTest.i_verify_as(java.lang.String,java.lang.String)"
-});
-formatter.write("08-23-2020 18:02:49 INFO:  Message type: Hi message Result: Hi, erdi");
-formatter.embedding("image/png", "embedded0.png", "Screenshot | 08-23-2020 18:02:49");
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "I click \"Sign out\" button",
+  "name": "I click \"Search Restaurants\" button",
   "keyword": "And "
 });
 formatter.match({
   "location": "step_definitions.HomePageTest.iClickButton(java.lang.String)"
 });
-formatter.write("08-23-2020 18:02:49 INFO:  Click: Sign out button");
+formatter.write("08-23-2020 22:41:32 INFO:  Click: Search Restaurants button");
 formatter.result({
   "status": "passed"
 });
+formatter.scenario({
+  "name": "Verify all necessary fields available",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@searchRestaurantPage"
+    },
+    {
+      "name": "@nav"
+    }
+  ]
+});
 formatter.step({
-  "name": "I login with invalid  credentials",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "step_definitions.HomePageTest.i_login_with_invalid_credentials()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "I verify \"Error message\" as \"Your email or password is incorrect! Please try again!\"",
+  "name": "I verify all fields available followind data:",
+  "rows": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {}
+  ],
   "keyword": "Then "
 });
 formatter.match({
-  "location": "step_definitions.HomePageTest.i_verify_as(java.lang.String,java.lang.String)"
+  "location": "step_definitions.SearchResPageTest.i_verify_all_fields_available_followind_data(java.util.List\u003cjava.lang.String\u003e)"
 });
-formatter.write("08-23-2020 18:02:49 INFO:  Message type: Error message Result: Your email or password is incorrect! Please try again!");
-formatter.embedding("image/png", "embedded1.png", "Screenshot | 08-23-2020 18:02:49");
+formatter.write("08-23-2020 22:41:32 INFO: Expected field: Search By | Actual field: Search By");
+formatter.write("08-23-2020 22:41:32 INFO: Expected field: Zip Code | Actual field: Zip Code");
+formatter.write("08-23-2020 22:41:32 INFO: Expected field: Distance (mile) | Actual field: Distance (mile)");
+formatter.write("08-23-2020 22:41:32 INFO: Expected field: Type | Actual field: Type");
+formatter.write("08-23-2020 22:41:32 INFO: Expected field: Min Rating | Actual field: Min Rating");
+formatter.write("08-23-2020 22:41:32 INFO: Expected field: Name | Actual field: Name");
+formatter.write("08-23-2020 22:41:32 INFO: Test completed. Screenshot: ");
+formatter.embedding("image/png", "embedded0.png", "Screenshot | 08-23-2020 22:41:32");
 formatter.result({
   "status": "passed"
 });
