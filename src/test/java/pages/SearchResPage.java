@@ -22,6 +22,9 @@ public class SearchResPage {
     @FindBy(id = "rating")
     public WebElement selectRating;
 
+    @FindBy(id = "type")
+    public WebElement selectFoodType;
+
 
 
 

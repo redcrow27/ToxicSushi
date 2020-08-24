@@ -31,4 +31,18 @@ Feature: Search Restaurant Page tests
       | 5 |
 
 
+  Scenario: Verify food options
+    Then I verify all fields available following data:
+      | American   |
+      | Burgers    |
+      | Chinese    |
+      | Italian    |
+      | Japanese   |
+      | Mexican    |
+      | Pasta      |
+      | Pizza      |
+      | Sandwiches |
+      | Seafood    |
+      | Steak      |
+      | Sushi      |
 

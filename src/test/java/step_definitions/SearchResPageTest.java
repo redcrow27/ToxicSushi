@@ -42,6 +42,14 @@ public class SearchResPageTest extends SearchResPageImpl {
                     CucumberUtils.logInfo("Expected option: " + dataTable.get(i) + " | Actual option: " + selectList2.get(i + 1).getText(), false);
                 }
                 break;
+            case "12":
+                Select select3 = new Select(searchResPage.selectFoodType);
+                List<WebElement> selectList3 = select3.getOptions();
+                for (int i = 0; i < dataTable.size(); i++) {
+                    Assert.assertEquals(dataTable.get(i), selectList3.get(i + 1).getText());
+                    CucumberUtils.logInfo("Expected food option: " + dataTable.get(i) + " | Actual food option: " + selectList3.get(i + 1).getText(), false);
+                }
+                break;
             default:
                 System.out.println("Invalid data");
         }
