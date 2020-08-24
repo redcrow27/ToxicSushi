@@ -1,9 +1,11 @@
 package step_definitions;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import pages.HomePage;
 import pages.SearchResPage;
 import step_impl.SearchResPageImpl;
 import utils.CucumberUtils;
@@ -57,4 +59,32 @@ public class SearchResPageTest extends SearchResPageImpl {
     }
 
 
+    @Given("I verify Zip Code field is disabled")
+    public void iVerifyZipCodeFieldIsDisabled() {
+        SearchResPage searchResPage = new SearchResPage();
+        Assert.assertTrue(searchResPage.zipCodeField.isDisplayed());
+        CucumberUtils.logInfo(" Zip Code field is Displayed: " + searchResPage.zipCodeField.isDisplayed(), false);
+    }
+
+    @Given("I choose {string} in {string} field")
+    public void i_choose_in_field(String option, String fieldName) {
+        SearchResPage searchResPage = new SearchResPage();
+        switch (fieldName.toLowerCase()) {
+            case "search by":
+                Select select = new Select(searchResPage.selectArea);
+                select.selectByVisibleText(option);
+                break;
+            default:
+                System.out.println("Invalid field name");
+        }
+        CucumberUtils.logInfo(fieldName + " field selected. ", false);
+    }
+
+
+    @Then("I verify Zip Code field is Enabled")
+    public void iVerifyZipCodeFieldIsEnabled() {
+        SearchResPage searchResPage = new SearchResPage();
+        SeleniumUtils.sendKeys(searchResPage.zipCodeField, "22182");
+        CucumberUtils.logInfo("Test completed. Screenshot: ", true);
+    }
 }

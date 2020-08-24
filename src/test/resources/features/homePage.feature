@@ -11,7 +11,7 @@ Feature: Home Page tests
   Scenario: Log in credentials test
     Given I verify "Hi message" as "Hi, erdi"
     And I click "Sign out" button
-    Given I login with invalid  credentials
+    When I login with invalid  credentials
     Then I verify "Error message" as "Your email or password is incorrect! Please try again!"
 
   Scenario: Sign out test

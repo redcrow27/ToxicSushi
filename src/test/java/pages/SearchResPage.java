@@ -25,6 +25,9 @@ public class SearchResPage {
     @FindBy(id = "type")
     public WebElement selectFoodType;
 
+    @FindBy(id = "zipcode")
+    public WebElement zipCodeField;
+
 
 
 

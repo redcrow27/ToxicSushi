@@ -30,19 +30,24 @@ Feature: Search Restaurant Page tests
       | 4 |
       | 5 |
 
-    @nav
+
   Scenario: Verify food options
     Then I verify all fields available following data:
-    |American|
-    |Burgers |
-    |Chinese |
-    |Italian |
-    |Japanese|
-    |Mexican |
-    |Pasta   |
-    |Pizza   |
-    |Sandwiches|
-    |Seafood   |
-    |Steak     |
-    |Sushi     |
+      | American   |
+      | Burgers    |
+      | Chinese    |
+      | Italian    |
+      | Japanese   |
+      | Mexican    |
+      | Pasta      |
+      | Pizza      |
+      | Sandwiches |
+      | Seafood    |
+      | Steak      |
+      | Sushi      |
 
+    @nav
+  Scenario: Verify zip code field enable to enter zip code
+    Given I verify Zip Code field is disabled
+    And I choose "Zip Code" in "Search By" field
+    Then I verify Zip Code field is Enabled
