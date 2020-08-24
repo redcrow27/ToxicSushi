@@ -60,7 +60,6 @@ Feature: Search Restaurant Page tests
     Then I verify "Request failed." message
 
 
-  @nav
   Scenario: Verify Search result test
     Given I click "Search" button
     Then I verify all fields available following data:
@@ -68,9 +67,18 @@ Feature: Search Restaurant Page tests
       | Rating stars       |
       | Address            |
       | Cuisines           |
-      | Phone      |
+      | Phone              |
       | Price Range        |
       | Open now: Open Now |
+
+    @nav
+  Scenario: Verify additional links in Search result
+    Given I click "Search" button
+    Then I verify all fields available following data:
+      | Reviews    |
+      | Directions |
+      | Share      |
+
 
 
 

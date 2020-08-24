@@ -61,8 +61,16 @@ public class SearchResPageTest extends SearchResPageImpl {
                 SeleniumUtils.moveIntoView(searchResPage.getFirstResName);
                 for (int i = 0; i < dataTable.size(); i++) {
                     Assert.assertTrue(searchResPage.listFields().get(i).isDisplayed());
-                    System.out.println(searchResPage.listFields().get(i).getText());
                     CucumberUtils.logInfo("Expected option: " + dataTable.get(i) + " | Actual option: " + searchResPage.listFields().get(i).getText(), false);
+                }
+                break;
+            case "3":
+                SeleniumUtils.waitForPageToLoad();
+                SeleniumUtils.moveIntoView(searchResPage.getFirstResName);
+                for (int i = 0; i < dataTable.size(); i++) {
+                    if(i == 4) { break;}
+                    Assert.assertTrue(searchResPage.linkListRDS.get(i).isDisplayed());
+                    CucumberUtils.logInfo("Expected option: " + dataTable.get(i) + " | Actual option: " + searchResPage.linkListRDS.get(i).getText(), false);
                 }
                 break;
             default:

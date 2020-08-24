@@ -72,4 +72,13 @@ Feature: Search Restaurant Page tests
       | Open now: Open Now |
 
 
+  Scenario: Verify additional links in Search result
+    Given I click "Search" button
+    Then I verify all fields available following data:
+      | Reviews    |
+      | Directions |
+      | Share      |
+
+
+
 

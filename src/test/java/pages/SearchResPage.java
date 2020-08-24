@@ -46,6 +46,9 @@ public class SearchResPage {
     @FindBy(xpath = "(//span[@class='rating_value'])[1]")
     public WebElement getFirstRating;
 
+    @FindBy(xpath = "//a[contains(@class, 'btn btn btn-full')]")
+    public List<WebElement> linkListRDS;
+
     public List<WebElement> listFields() {
         List<WebElement> list = new ArrayList<>();
         list.add(0, getFirstResName);
