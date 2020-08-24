@@ -34,12 +34,12 @@ formatter.step({
 formatter.match({
   "location": "step_definitions.HomePageTest.iClickButton(java.lang.String)"
 });
-formatter.write("08-24-2020 00:39:28 INFO:  Click: Search Restaurants button");
+formatter.write("08-24-2020 02:57:57 INFO:  Click: Search Restaurants button");
 formatter.result({
   "status": "passed"
 });
 formatter.scenario({
-  "name": "Verify zip code field enable to enter zip code",
+  "name": "Verify Zip code field accepts only valid zip codes",
   "description": "",
   "keyword": "Scenario",
   "tags": [
@@ -52,36 +52,46 @@ formatter.scenario({
   ]
 });
 formatter.step({
-  "name": "I verify Zip Code field is disabled",
+  "name": "I enter \"20191\" in Zip Code Field",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "step_definitions.SearchResPageTest.iVerifyZipCodeFieldIsDisabled()"
+  "location": "step_definitions.SearchResPageTest.i_enter_in_Zip_Code_Field(java.lang.String)"
 });
-formatter.write("08-24-2020 00:39:28 INFO:  Zip Code field is Displayed: true");
+formatter.write("08-24-2020 02:57:57 INFO: Zip Code entered: 20191");
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I choose \"Zip Code\" in \"Search By\" field",
+  "name": "I verify Zip Code is exist",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "step_definitions.SearchResPageTest.i_verify_Zip_Code_is_exist()"
+});
+formatter.write("08-24-2020 02:57:57 INFO:  Entered zip code: 20191 | Address line contains zip code: Address: 2303 Soapstone Dr Ste A, Reston, VA 20191-4422");
+formatter.embedding("image/png", "embedded0.png", "Screenshot | 08-24-2020 02:57:57");
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I enter \"aaaa1\" in Zip Code Field",
   "keyword": "And "
 });
 formatter.match({
-  "location": "step_definitions.SearchResPageTest.i_choose_in_field(java.lang.String,java.lang.String)"
+  "location": "step_definitions.SearchResPageTest.i_enter_in_Zip_Code_Field(java.lang.String)"
 });
-formatter.write("08-24-2020 00:39:28 INFO: Search By field selected. ");
+formatter.write("08-24-2020 02:57:57 INFO: Zip Code entered: aaaa1");
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I verify Zip Code field is Enabled",
+  "name": "I verify \"Request failed.\" message",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "step_definitions.SearchResPageTest.iVerifyZipCodeFieldIsEnabled()"
+  "location": "step_definitions.SearchResPageTest.i_verify_message(java.lang.String)"
 });
-formatter.write("08-24-2020 00:39:28 INFO: Test completed. Screenshot: ");
-formatter.embedding("image/png", "embedded0.png", "Screenshot | 08-24-2020 00:39:28");
 formatter.result({
   "status": "passed"
 });

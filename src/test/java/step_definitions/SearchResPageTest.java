@@ -2,19 +2,23 @@ package step_definitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import pages.HomePage;
 import pages.SearchResPage;
 import step_impl.SearchResPageImpl;
-import utils.CucumberUtils;
-import utils.SeleniumUtils;
+import utils.*;
 
 import java.util.List;
 
 public class SearchResPageTest extends SearchResPageImpl {
 
+    private static String propertyPath = "src/test/resources/conf/configuration.properties";
+    String previousZipCode;
 
     @Then("I verify all fields available following data:")
     public void i_verify_all_fields_available_following_data(List<String> dataTable) {
@@ -84,7 +88,33 @@ public class SearchResPageTest extends SearchResPageImpl {
     @Then("I verify Zip Code field is Enabled")
     public void iVerifyZipCodeFieldIsEnabled() {
         SearchResPage searchResPage = new SearchResPage();
-        SeleniumUtils.sendKeys(searchResPage.zipCodeField, "22182");
+        SeleniumUtils.sendKeys(searchResPage.zipCodeField, ConfigReader.readProperty("currentZip", propertyPath));
+        Assert.assertTrue(searchResPage.zipCodeField.isEnabled());
         CucumberUtils.logInfo("Test completed. Screenshot: ", true);
+    }
+
+    @Given("I enter {string} in Zip Code Field")
+    public void i_enter_in_Zip_Code_Field(String zipCode) {
+        SearchResPage searchResPage = new SearchResPage();
+        searchResPage.enterZipCode(zipCode);
+        CucumberUtils.logInfo("Zip Code entered: " + zipCode, false);
+        previousZipCode = zipCode;
+    }
+
+    @When("I verify Zip Code is exist")
+    public void i_verify_Zip_Code_is_exist() {
+        SearchResPage searchResPage = new SearchResPage();
+        Assert.assertTrue(searchResPage.firstAddressLine.getText().contains(previousZipCode));
+        SeleniumUtils.moveIntoView(searchResPage.firstAddressLine);
+        CucumberUtils.logInfo(" Entered zip code: " + previousZipCode + " | Address line contains zip code: " +
+                searchResPage.firstAddressLine.getText(), true);
+    }
+
+
+    @Then("I verify {string} message")
+    public void i_verify_message(String message) {
+        SeleniumUtils.sleep(3000);
+        Alert alert = Driver.getDriver().switchTo().alert();
+        Assert.assertEquals(message, alert.getText());
     }
 }

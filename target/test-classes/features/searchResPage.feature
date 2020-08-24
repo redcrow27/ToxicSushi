@@ -46,8 +46,21 @@ Feature: Search Restaurant Page tests
       | Steak      |
       | Sushi      |
 
-    @nav
+
   Scenario: Verify zip code field enable to enter zip code
     Given I verify Zip Code field is disabled
     And I choose "Zip Code" in "Search By" field
     Then I verify Zip Code field is Enabled
+
+    @nav
+  Scenario: Verify Zip code field accepts only valid zip codes
+    Given I enter "20191" in Zip Code Field
+    When I verify Zip Code is exist
+    And I enter "aaaa1" in Zip Code Field
+    Then I verify "Request failed." message
+
+
+#  @nav
+#  Scenario: Verify Zip code field accepts only valid zip codes
+#    And I enter "aaaa1" in Zip Code Field
+#    Then I verify "Request failed." message

@@ -45,7 +45,7 @@ public class SeleniumUtils {
     }
 
     public static void waitForAlert(){
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 5);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         wait.until(ExpectedConditions.alertIsPresent());
     }
 
