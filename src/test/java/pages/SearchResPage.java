@@ -16,6 +16,10 @@ public class SearchResPage {
     @FindBy(xpath = "//label[contains(@class, 'col')]")
     public List<WebElement> searchFieldsName;
 
+    @FindBy(id = "searcharea")
+    public WebElement selectArea;
+
+
 
 
 }
