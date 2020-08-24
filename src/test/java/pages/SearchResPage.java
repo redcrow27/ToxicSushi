@@ -34,7 +34,7 @@ public class SearchResPage {
     @FindBy(xpath = "(//div[@class='result'])[1]")
     public WebElement firstAddressLine;
 
-    @FindBy(id = "search-btn")
+    @FindBy(xpath = "//a[text()='Search']")
     public WebElement searchBtn;
 
     @FindBy(xpath = "//div[@class='result']")
@@ -45,6 +45,9 @@ public class SearchResPage {
 
     @FindBy(xpath = "(//span[@class='rating_value'])[1]")
     public WebElement getFirstRating;
+
+    @FindBy(xpath = "//span[@class='rating_value']")
+    public List<WebElement> ratingList;
 
     @FindBy(xpath = "//a[contains(@class, 'btn btn btn-full')]")
     public List<WebElement> linkListRDS;

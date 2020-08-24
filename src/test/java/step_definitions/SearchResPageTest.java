@@ -121,6 +121,7 @@ public class SearchResPageTest extends SearchResPageImpl {
     @When("I verify Zip Code is exist")
     public void i_verify_Zip_Code_is_exist() {
         SearchResPage searchResPage = new SearchResPage();
+        SeleniumUtils.waitForVisibility(searchResPage.firstAddressLine);
         Assert.assertTrue(searchResPage.firstAddressLine.getText().contains(previousZipCode));
         SeleniumUtils.moveIntoView(searchResPage.firstAddressLine);
         CucumberUtils.logInfo(" Entered zip code: " + previousZipCode + " | Address line contains zip code: " +
@@ -143,5 +144,21 @@ public class SearchResPageTest extends SearchResPageImpl {
         Assert.assertTrue(searchResPage.firstAddressLine.getText().contains(currentZipcode));
         CucumberUtils.logInfo(" My current zip code: " + currentZipcode + " | Address line contains zip code: " +
                 searchResPage.firstAddressLine.getText(), true);
+    }
+
+    @Given("I choose {string} rating option")
+    public void i_choose_rating_option(String rating) {
+        SearchResPage searchResPage = new SearchResPage();
+        Select select = new Select(searchResPage.selectRating);
+        select.selectByVisibleText(rating);
+        CucumberUtils.logInfo("Selected rating: " + rating , false);
+    }
+
+    @Then("I verify rating is {string}")
+    public void i_verify_rating_is(String rating) {
+        SearchResPage searchResPage = new SearchResPage();
+        SeleniumUtils.moveIntoView(searchResPage.getFirstResName);
+        Assert.assertTrue(searchResPage.getFirstRating.getText().contains(rating));
+        CucumberUtils.logInfo("Actual rating: " + rating , false);
     }
 }

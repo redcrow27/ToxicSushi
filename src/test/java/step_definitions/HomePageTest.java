@@ -86,7 +86,9 @@ public class HomePageTest extends HomePageImpl {
                 break;
             case "search restaurants": SeleniumUtils.click(homePage.headerLinks.get(1));
                 break;
-            case "search": SeleniumUtils.click(searchResPage.searchBtn);
+            case "search":
+                SeleniumUtils.waitForClickability(searchResPage.searchBtn);
+                SeleniumUtils.click(searchResPage.searchBtn);
                 break;
             default:
                 System.out.println("Invalid button");

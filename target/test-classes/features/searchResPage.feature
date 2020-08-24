@@ -85,9 +85,21 @@ Feature: Search Restaurant Page tests
     Then I verify address line contains my current location
 
 
-  @nav
   Scenario: Verify entered zip code displayed after click the search button
     Given I enter "22180" in Zip Code Field
     When I click "Search" button
     Then I verify Zip Code is exist
+
+  @nav
+  Scenario Outline: Verify Search by rating
+    Given I choose "<rating>" rating option
+    And I click "Search" button
+    Then I verify rating is "<rating>"
+    Examples:
+    |rating|
+    |1     |
+    |2     |
+    |3     |
+    |4     |
+    |5     |
 
