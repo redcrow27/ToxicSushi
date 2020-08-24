@@ -79,11 +79,15 @@ Feature: Search Restaurant Page tests
       | Directions |
       | Share      |
 
-  @nav
+
   Scenario: Verify Address line contains my current location
     Given I click "Search" button
     Then I verify address line contains my current location
 
 
-
+  @nav
+  Scenario: Verify entered zip code displayed after click the search button
+    Given I enter "22180" in Zip Code Field
+    When I click "Search" button
+    Then I verify Zip Code is exist
 

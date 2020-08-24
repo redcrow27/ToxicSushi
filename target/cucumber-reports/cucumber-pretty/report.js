@@ -34,12 +34,12 @@ formatter.step({
 formatter.match({
   "location": "step_definitions.HomePageTest.iClickButton(java.lang.String)"
 });
-formatter.write("08-24-2020 12:00:50 INFO:  Click: Search Restaurants button");
+formatter.write("08-24-2020 12:27:34 INFO:  Click: Search Restaurants button");
 formatter.result({
   "status": "passed"
 });
 formatter.scenario({
-  "name": "Verify Address line contains my current location",
+  "name": "Verify entered zip code displayed after click the search button",
   "description": "",
   "keyword": "Scenario",
   "tags": [
@@ -52,25 +52,36 @@ formatter.scenario({
   ]
 });
 formatter.step({
-  "name": "I click \"Search\" button",
+  "name": "I enter \"22180\" in Zip Code Field",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "step_definitions.HomePageTest.iClickButton(java.lang.String)"
+  "location": "step_definitions.SearchResPageTest.i_enter_in_Zip_Code_Field(java.lang.String)"
 });
-formatter.write("08-24-2020 12:00:50 INFO:  Click: Search button");
+formatter.write("08-24-2020 12:27:34 INFO: Zip Code entered: 22180");
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I verify address line contains my current location",
+  "name": "I click \"Search\" button",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "step_definitions.HomePageTest.iClickButton(java.lang.String)"
+});
+formatter.write("08-24-2020 12:27:34 INFO:  Click: Search button");
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I verify Zip Code is exist",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "step_definitions.SearchResPageTest.iVerifyAddressLineContainsMyCurrentLocation()"
+  "location": "step_definitions.SearchResPageTest.i_verify_Zip_Code_is_exist()"
 });
-formatter.write("08-24-2020 12:00:50 INFO:  My current zip code: 22101 | Address line contains zip code: Address: 6829 Tennyson Dr, McLean, VA 22101-5721");
-formatter.embedding("image/png", "embedded0.png", "Screenshot | 08-24-2020 12:00:50");
+formatter.write("08-24-2020 12:27:34 INFO:  Entered zip code: 22180 | Address line contains zip code: Address: 141 Park St SE, Vienna, VA 22180-4607");
+formatter.embedding("image/png", "embedded0.png", "Screenshot | 08-24-2020 12:27:34");
 formatter.result({
   "status": "passed"
 });
