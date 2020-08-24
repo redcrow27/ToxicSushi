@@ -80,5 +80,10 @@ Feature: Search Restaurant Page tests
       | Share      |
 
 
+  Scenario: Verify Address line contains my current location
+    Given I click "Search" button
+    Then I verify address line contains my current location
+
+
 
 

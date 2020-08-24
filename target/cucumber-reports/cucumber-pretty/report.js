@@ -34,12 +34,12 @@ formatter.step({
 formatter.match({
   "location": "step_definitions.HomePageTest.iClickButton(java.lang.String)"
 });
-formatter.write("08-24-2020 11:38:15 INFO:  Click: Search Restaurants button");
+formatter.write("08-24-2020 12:00:50 INFO:  Click: Search Restaurants button");
 formatter.result({
   "status": "passed"
 });
 formatter.scenario({
-  "name": "Verify additional links in Search result",
+  "name": "Verify Address line contains my current location",
   "description": "",
   "keyword": "Scenario",
   "tags": [
@@ -58,27 +58,19 @@ formatter.step({
 formatter.match({
   "location": "step_definitions.HomePageTest.iClickButton(java.lang.String)"
 });
-formatter.write("08-24-2020 11:38:15 INFO:  Click: Search button");
+formatter.write("08-24-2020 12:00:50 INFO:  Click: Search button");
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I verify all fields available following data:",
-  "rows": [
-    {},
-    {},
-    {}
-  ],
+  "name": "I verify address line contains my current location",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "step_definitions.SearchResPageTest.i_verify_all_fields_available_following_data(java.util.List\u003cjava.lang.String\u003e)"
+  "location": "step_definitions.SearchResPageTest.iVerifyAddressLineContainsMyCurrentLocation()"
 });
-formatter.write("08-24-2020 11:38:15 INFO: Expected option: Reviews | Actual option: Reviews");
-formatter.write("08-24-2020 11:38:15 INFO: Expected option: Directions | Actual option: Directions");
-formatter.write("08-24-2020 11:38:15 INFO: Expected option: Share | Actual option: Share");
-formatter.write("08-24-2020 11:38:15 INFO: Test completed. Screenshot: ");
-formatter.embedding("image/png", "embedded0.png", "Screenshot | 08-24-2020 11:38:15");
+formatter.write("08-24-2020 12:00:50 INFO:  My current zip code: 22101 | Address line contains zip code: Address: 6829 Tennyson Dr, McLean, VA 22101-5721");
+formatter.embedding("image/png", "embedded0.png", "Screenshot | 08-24-2020 12:00:50");
 formatter.result({
   "status": "passed"
 });

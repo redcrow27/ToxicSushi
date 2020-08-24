@@ -71,13 +71,18 @@ Feature: Search Restaurant Page tests
       | Price Range        |
       | Open now: Open Now |
 
-    @nav
+
   Scenario: Verify additional links in Search result
     Given I click "Search" button
     Then I verify all fields available following data:
       | Reviews    |
       | Directions |
       | Share      |
+
+  @nav
+  Scenario: Verify Address line contains my current location
+    Given I click "Search" button
+    Then I verify address line contains my current location
 
 
 

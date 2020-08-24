@@ -134,4 +134,14 @@ public class SearchResPageTest extends SearchResPageImpl {
         Alert alert = Driver.getDriver().switchTo().alert();
         Assert.assertEquals(message, alert.getText());
     }
+
+    @Then("I verify address line contains my current location")
+    public void iVerifyAddressLineContainsMyCurrentLocation() {
+        SearchResPage searchResPage = new SearchResPage();
+        String currentZipcode = ConfigReader.readProperty("currentZip", propertyPath);
+        SeleniumUtils.moveIntoView(searchResPage.firstAddressLine);
+        Assert.assertTrue(searchResPage.firstAddressLine.getText().contains(currentZipcode));
+        CucumberUtils.logInfo(" My current zip code: " + currentZipcode + " | Address line contains zip code: " +
+                searchResPage.firstAddressLine.getText(), true);
+    }
 }
