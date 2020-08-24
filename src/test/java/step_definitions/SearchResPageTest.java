@@ -56,6 +56,15 @@ public class SearchResPageTest extends SearchResPageImpl {
                     CucumberUtils.logInfo("Expected food option: " + dataTable.get(i) + " | Actual food option: " + selectList3.get(i + 1).getText(), false);
                 }
                 break;
+            case "7":
+                SeleniumUtils.waitForPageToLoad();
+                SeleniumUtils.moveIntoView(searchResPage.getFirstResName);
+                for (int i = 0; i < dataTable.size(); i++) {
+                    Assert.assertTrue(searchResPage.listFields().get(i).isDisplayed());
+                    System.out.println(searchResPage.listFields().get(i).getText());
+                    CucumberUtils.logInfo("Expected option: " + dataTable.get(i) + " | Actual option: " + searchResPage.listFields().get(i).getText(), false);
+                }
+                break;
             default:
                 System.out.println("Invalid data");
         }

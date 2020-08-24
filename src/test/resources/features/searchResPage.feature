@@ -60,3 +60,16 @@ Feature: Search Restaurant Page tests
     Then I verify "Request failed." message
 
 
+  Scenario: Verify Search result test
+    Given I click "Search" button
+    Then I verify all fields available following data:
+      | Name of the place  |
+      | Rating stars       |
+      | Address            |
+      | Cuisines           |
+      | Phone              |
+      | Price Range        |
+      | Open now: Open Now |
+
+
+

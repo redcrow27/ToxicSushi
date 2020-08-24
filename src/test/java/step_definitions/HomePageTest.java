@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import pages.HomePage;
+import pages.SearchResPage;
 import step_impl.HomePageImpl;
 import utils.ConfigReader;
 import utils.CucumberUtils;
@@ -71,6 +72,7 @@ public class HomePageTest extends HomePageImpl {
     @And("I click {string} button")
     public void iClickButton(String button) {
         HomePage homePage = new HomePage();
+        SearchResPage searchResPage = new SearchResPage();
         switch (button.toLowerCase()) {
             case "close": SeleniumUtils.click(homePage.closeBtn);
                 break;
@@ -83,6 +85,8 @@ public class HomePageTest extends HomePageImpl {
             case "show me more": SeleniumUtils.click(homePage.showMeMoreBtn);
                 break;
             case "search restaurants": SeleniumUtils.click(homePage.headerLinks.get(1));
+                break;
+            case "search": SeleniumUtils.click(searchResPage.searchBtn);
                 break;
             default:
                 System.out.println("Invalid button");

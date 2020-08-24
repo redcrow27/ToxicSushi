@@ -52,7 +52,7 @@ Feature: Search Restaurant Page tests
     And I choose "Zip Code" in "Search By" field
     Then I verify Zip Code field is Enabled
 
-    @nav
+
   Scenario: Verify Zip code field accepts only valid zip codes
     Given I enter "20191" in Zip Code Field
     When I verify Zip Code is exist
@@ -60,7 +60,17 @@ Feature: Search Restaurant Page tests
     Then I verify "Request failed." message
 
 
-#  @nav
-#  Scenario: Verify Zip code field accepts only valid zip codes
-#    And I enter "aaaa1" in Zip Code Field
-#    Then I verify "Request failed." message
+  @nav
+  Scenario: Verify Search result test
+    Given I click "Search" button
+    Then I verify all fields available following data:
+      | Name of the place  |
+      | Rating stars       |
+      | Address            |
+      | Cuisines           |
+      | Phone      |
+      | Price Range        |
+      | Open now: Open Now |
+
+
+

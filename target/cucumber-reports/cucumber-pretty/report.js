@@ -34,12 +34,12 @@ formatter.step({
 formatter.match({
   "location": "step_definitions.HomePageTest.iClickButton(java.lang.String)"
 });
-formatter.write("08-24-2020 02:57:57 INFO:  Click: Search Restaurants button");
+formatter.write("08-24-2020 11:18:50 INFO:  Click: Search Restaurants button");
 formatter.result({
   "status": "passed"
 });
 formatter.scenario({
-  "name": "Verify Zip code field accepts only valid zip codes",
+  "name": "Verify Search result test",
   "description": "",
   "keyword": "Scenario",
   "tags": [
@@ -52,46 +52,41 @@ formatter.scenario({
   ]
 });
 formatter.step({
-  "name": "I enter \"20191\" in Zip Code Field",
+  "name": "I click \"Search\" button",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "step_definitions.SearchResPageTest.i_enter_in_Zip_Code_Field(java.lang.String)"
+  "location": "step_definitions.HomePageTest.iClickButton(java.lang.String)"
 });
-formatter.write("08-24-2020 02:57:57 INFO: Zip Code entered: 20191");
+formatter.write("08-24-2020 11:18:50 INFO:  Click: Search button");
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I verify Zip Code is exist",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "step_definitions.SearchResPageTest.i_verify_Zip_Code_is_exist()"
-});
-formatter.write("08-24-2020 02:57:57 INFO:  Entered zip code: 20191 | Address line contains zip code: Address: 2303 Soapstone Dr Ste A, Reston, VA 20191-4422");
-formatter.embedding("image/png", "embedded0.png", "Screenshot | 08-24-2020 02:57:57");
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "I enter \"aaaa1\" in Zip Code Field",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "step_definitions.SearchResPageTest.i_enter_in_Zip_Code_Field(java.lang.String)"
-});
-formatter.write("08-24-2020 02:57:57 INFO: Zip Code entered: aaaa1");
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "I verify \"Request failed.\" message",
+  "name": "I verify all fields available following data:",
+  "rows": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {}
+  ],
   "keyword": "Then "
 });
 formatter.match({
-  "location": "step_definitions.SearchResPageTest.i_verify_message(java.lang.String)"
+  "location": "step_definitions.SearchResPageTest.i_verify_all_fields_available_following_data(java.util.List\u003cjava.lang.String\u003e)"
 });
+formatter.write("08-24-2020 11:18:50 INFO: Expected option: Name of the place | Actual option: The Gourmet basket");
+formatter.write("08-24-2020 11:18:50 INFO: Expected option: Rating stars | Actual option: 4.5");
+formatter.write("08-24-2020 11:18:50 INFO: Expected option: Address | Actual option: Address: 6829 Tennyson Dr, McLean, VA 22101-5721");
+formatter.write("08-24-2020 11:18:50 INFO: Expected option: Cuisines | Actual option: Cuisines:");
+formatter.write("08-24-2020 11:18:50 INFO: Expected option: Phone | Actual option: Phone: +1 703-848-2456");
+formatter.write("08-24-2020 11:18:50 INFO: Expected option: Price Range | Actual option: Price Range:");
+formatter.write("08-24-2020 11:18:50 INFO: Expected option: Open now: Open Now | Actual option: Open now: Open Now");
+formatter.write("08-24-2020 11:18:50 INFO: Test completed. Screenshot: ");
+formatter.embedding("image/png", "embedded0.png", "Screenshot | 08-24-2020 11:18:50");
 formatter.result({
   "status": "passed"
 });
