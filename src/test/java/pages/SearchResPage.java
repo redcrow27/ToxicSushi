@@ -19,6 +19,9 @@ public class SearchResPage {
     @FindBy(id = "searcharea")
     public WebElement selectArea;
 
+    @FindBy(id = "rating")
+    public WebElement selectRating;
+
 
 
 

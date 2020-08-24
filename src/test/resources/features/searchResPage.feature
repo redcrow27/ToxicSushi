@@ -22,4 +22,13 @@ Feature: Search Restaurant Page tests
       | Zip Code         |
 
 
+  Scenario: Verify rating options
+    Then I verify all fields available following data:
+      | 1 |
+      | 2 |
+      | 3 |
+      | 4 |
+      | 5 |
+
+
 

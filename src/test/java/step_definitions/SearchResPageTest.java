@@ -25,11 +25,21 @@ public class SearchResPageTest extends SearchResPageImpl {
                 }
                 break;
             case "2":
+                Select select = new Select(searchResPage.selectArea);
+                List<WebElement> selectList = select.getOptions();
                 for (int i = 0; i < dataTable.size(); i++) {
-                    Select select = new Select(searchResPage.selectArea);
-                    List<WebElement> selectList = select.getOptions();
                     Assert.assertEquals(dataTable.get(i), selectList.get(i).getText());
                     CucumberUtils.logInfo("Expected option: " + dataTable.get(i) + " | Actual option: " + selectList.get(i).getText(), false);
+                }
+                Assert.assertEquals(dataTable.get(0), select.getFirstSelectedOption().getText());
+                CucumberUtils.logInfo("Expected first option: " + dataTable.get(0) + " | Actual first option: " + select.getFirstSelectedOption().getText(), false);
+                break;
+            case "5":
+                Select select2 = new Select(searchResPage.selectRating);
+                List<WebElement> selectList2 = select2.getOptions();
+                for (int i = 0; i < dataTable.size(); i++) {
+                    Assert.assertEquals(dataTable.get(i), selectList2.get(i + 1).getText());
+                    CucumberUtils.logInfo("Expected option: " + dataTable.get(i) + " | Actual option: " + selectList2.get(i + 1).getText(), false);
                 }
                 break;
             default:
