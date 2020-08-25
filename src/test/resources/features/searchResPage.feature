@@ -129,3 +129,12 @@ Feature: Search Restaurant Page tests
     And I click "Search" button
     Then I verify results list only the restaurants with the same name
 
+
+  Scenario: Verify Reviews information
+    Given I click "Search" button
+    And I click "Reviews" button
+    Then I verify all fields available following data:
+      | Date          |
+      | Stars         |
+      | Actual review |
+

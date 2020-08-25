@@ -58,6 +58,26 @@ public class SearchResPage {
     @FindBy(id = "place_name")
     public WebElement restaurantField;
 
+    @FindBy(xpath = "//a[@class='reviews_btn btn btn-full']")
+    public WebElement reviewsBtn;
+
+    @FindBy(xpath = "(//div[@class='published_date'])[1]")
+    public WebElement dateInfo;
+
+    @FindBy(xpath = "(//span[@class='rating_value'])[1]")
+    public WebElement starInfo;
+
+    @FindBy(xpath = "(//div[@class='review_text'])[1]")
+    public WebElement actualReview;
+
+    public List<WebElement> reviewElements() {
+        List<WebElement> list = new ArrayList<>();
+        list.add(0,dateInfo);
+        list.add(1,starInfo);
+        list.add(2,actualReview);
+        return list;
+    }
+
     public void enterRestaurantName(String restaurantName) {
         restaurantField.clear();
         SeleniumUtils.sendKeys(restaurantField, restaurantName);

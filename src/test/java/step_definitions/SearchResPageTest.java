@@ -24,14 +24,14 @@ public class SearchResPageTest extends SearchResPageImpl {
     @Then("I verify all fields available following data:")
     public void i_verify_all_fields_available_following_data(List<String> dataTable) {
         SearchResPage searchResPage = new SearchResPage();
-        switch (String.valueOf(dataTable.size())) {
-            case "6":
+        switch (dataTable.get(0).toLowerCase()) {
+            case "search by":
                 for (int i = 0; i < dataTable.size(); i++) {
                     Assert.assertEquals(dataTable.get(i), searchResPage.searchFieldsName.get(i).getText());
                     CucumberUtils.logInfo("Expected field: " + dataTable.get(i) + " | Actual field: " + searchResPage.searchFieldsName.get(i).getText(), false);
                 }
                 break;
-            case "2":
+            case "current location":
                 Select select = new Select(searchResPage.selectArea);
                 List<WebElement> selectList = select.getOptions();
                 for (int i = 0; i < dataTable.size(); i++) {
@@ -41,7 +41,7 @@ public class SearchResPageTest extends SearchResPageImpl {
                 Assert.assertEquals(dataTable.get(0), select.getFirstSelectedOption().getText());
                 CucumberUtils.logInfo("Expected first option: " + dataTable.get(0) + " | Actual first option: " + select.getFirstSelectedOption().getText(), false);
                 break;
-            case "5":
+            case "1":
                 Select select2 = new Select(searchResPage.selectRating);
                 List<WebElement> selectList2 = select2.getOptions();
                 for (int i = 0; i < dataTable.size(); i++) {
@@ -49,7 +49,7 @@ public class SearchResPageTest extends SearchResPageImpl {
                     CucumberUtils.logInfo("Expected option: " + dataTable.get(i) + " | Actual option: " + selectList2.get(i + 1).getText(), false);
                 }
                 break;
-            case "12":
+            case "american":
                 Select select3 = new Select(searchResPage.selectFoodType);
                 List<WebElement> selectList3 = select3.getOptions();
                 for (int i = 0; i < dataTable.size(); i++) {
@@ -57,7 +57,7 @@ public class SearchResPageTest extends SearchResPageImpl {
                     CucumberUtils.logInfo("Expected food option: " + dataTable.get(i) + " | Actual food option: " + selectList3.get(i + 1).getText(), false);
                 }
                 break;
-            case "7":
+            case "name of the place":
                 SeleniumUtils.waitForPageToLoad();
                 SeleniumUtils.moveIntoView(searchResPage.getFirstResName);
                 for (int i = 0; i < dataTable.size(); i++) {
@@ -65,13 +65,21 @@ public class SearchResPageTest extends SearchResPageImpl {
                     CucumberUtils.logInfo("Expected option: " + dataTable.get(i) + " | Actual option: " + searchResPage.listFields().get(i).getText(), false);
                 }
                 break;
-            case "3":
+            case "reviews":
                 SeleniumUtils.waitForPageToLoad();
                 SeleniumUtils.moveIntoView(searchResPage.getFirstResName);
                 for (int i = 0; i < dataTable.size(); i++) {
                     if(i == 4) { break;}
                     Assert.assertTrue(searchResPage.linkListRDS.get(i).isDisplayed());
                     CucumberUtils.logInfo("Expected option: " + dataTable.get(i) + " | Actual option: " + searchResPage.linkListRDS.get(i).getText(), false);
+                }
+                break;
+            case "date":
+                SeleniumUtils.waitForPageToLoad();
+                SeleniumUtils.moveIntoView(searchResPage.getFirstResName);
+                for (int i = 0; i < dataTable.size(); i++) {
+                    Assert.assertTrue(searchResPage.reviewElements().get(i).isDisplayed());
+                    CucumberUtils.logInfo("Expected fields: " + dataTable.get(i) + " | Actual field info: " + searchResPage.reviewElements().get(i).getText(), false);
                 }
                 break;
             default:
