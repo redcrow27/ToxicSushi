@@ -97,9 +97,6 @@ Feature: Search Restaurant Page tests
     Then I verify rating is "<rating>"
     Examples:
       | rating |
-      | 1      |
-      | 2      |
-      | 3      |
       | 4      |
       | 5      |
 
@@ -109,19 +106,15 @@ Feature: Search Restaurant Page tests
     And I click "Search" button
     Then I verify Cuisines section have "<food>"
     Examples:
-      | food       |
-      | American   |
-      | Burgers    |
-      | Chinese    |
-      | Italian    |
-      | Japanese   |
-      | Mexican    |
-      | Pasta      |
-      | Pizza      |
-      | Sandwiches |
-      | Seafood    |
-      | Steak      |
-      | Sushi      |
+      | food     |
+      | American |
+      | Chinese  |
+      | Italian  |
+      | Japanese |
+      | Mexican  |
+      | Pizza    |
+      | Steak    |
+      | Sushi    |
 
 
   Scenario: Verify Search Restaurant based on name

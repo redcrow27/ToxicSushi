@@ -90,20 +90,17 @@ Feature: Search Restaurant Page tests
     When I click "Search" button
     Then I verify Zip Code is exist
 
-
+  @nav
   Scenario Outline: Verify Search by rating
     Given I choose "<rating>" rating option
     And I click "Search" button
     Then I verify rating is "<rating>"
     Examples:
       | rating |
-      | 1      |
-      | 2      |
-      | 3      |
       | 4      |
       | 5      |
 
-
+  @nav
   Scenario Outline: Verify Search by Type of food
     Given I choose "<food>" food option
     And I click "Search" button
@@ -111,15 +108,11 @@ Feature: Search Restaurant Page tests
     Examples:
       | food       |
       | American   |
-      | Burgers    |
       | Chinese    |
       | Italian    |
       | Japanese   |
       | Mexican    |
-      | Pasta      |
       | Pizza      |
-      | Sandwiches |
-      | Seafood    |
       | Steak      |
       | Sushi      |
 
@@ -146,14 +139,14 @@ Feature: Search Restaurant Page tests
       | Minutes |
       | Miles   |
 
-    @nav
+
   Scenario: Verify Share button information
     Given I click "Search" button
     And I click "Share" button
     Then I verify all fields available following data:
-    |To|
-    |Community|
-    |Custom Email Address|
-    |Subject            |
-    |Send               |
+      | To                   |
+      | Community            |
+      | Custom Email Address |
+      | Subject              |
+      | Send                 |
 
