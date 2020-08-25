@@ -103,7 +103,7 @@ Feature: Search Restaurant Page tests
       | 4      |
       | 5      |
 
-  @nav
+
   Scenario Outline: Verify Search by Type of food
     Given I choose "<food>" food option
     And I click "Search" button
@@ -122,4 +122,10 @@ Feature: Search Restaurant Page tests
       | Seafood    |
       | Steak      |
       | Sushi      |
+
+  @nav
+  Scenario: Verify Search Restaurant based on name
+    Given I enter restaurant name as "Kazan Restaurant"
+    And I click "Search" button
+    Then I verify results list only the restaurants with the same name
 

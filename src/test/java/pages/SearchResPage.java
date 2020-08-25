@@ -55,6 +55,14 @@ public class SearchResPage {
     @FindBy(xpath = "(//div[@class='result'])[2]")
     public WebElement cuisineField;
 
+    @FindBy(id = "place_name")
+    public WebElement restaurantField;
+
+    public void enterRestaurantName(String restaurantName) {
+        restaurantField.clear();
+        SeleniumUtils.sendKeys(restaurantField, restaurantName);
+    }
+
     public List<WebElement> listFields() {
         List<WebElement> list = new ArrayList<>();
         list.add(0, getFirstResName);

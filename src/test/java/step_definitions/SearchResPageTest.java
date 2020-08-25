@@ -19,6 +19,7 @@ public class SearchResPageTest extends SearchResPageImpl {
 
     private static String propertyPath = "src/test/resources/conf/configuration.properties";
     String previousZipCode;
+    String previousRestaurantName;
 
     @Then("I verify all fields available following data:")
     public void i_verify_all_fields_available_following_data(List<String> dataTable) {
@@ -175,7 +176,23 @@ public class SearchResPageTest extends SearchResPageImpl {
         SearchResPage searchResPage = new SearchResPage();
         SeleniumUtils.moveIntoView(searchResPage.getFirstResName);
         Assert.assertTrue(searchResPage.cuisineField.getText().contains(food));
-        CucumberUtils.logInfo("Actual rating: " + food , false);
+        CucumberUtils.logInfo("Actual food: " + food , false);
+    }
+
+    @Given("I enter restaurant name as {string}")
+    public void i_enter_restaurant_name_as(String restaurant) {
+       SearchResPage searchResPage = new SearchResPage();
+       searchResPage.enterRestaurantName(restaurant);
+       previousRestaurantName = restaurant;
+    }
+
+    @Then("I verify results list only the restaurants with the same name")
+    public void i_verify_results_list_only_the_restaurants_with_the_same_name() {
+        SearchResPage searchResPage = new SearchResPage();
+        SeleniumUtils.moveIntoView(searchResPage.getFirstResName);
+        Assert.assertEquals(searchResPage.getFirstResName.getText(), previousRestaurantName);
+        CucumberUtils.logInfo(" Entered restaurant name: " + previousRestaurantName+ " | Actual restaurant name: " +
+                searchResPage.getFirstResName.getText(), true);
     }
 
 }

@@ -123,3 +123,9 @@ Feature: Search Restaurant Page tests
       | Steak      |
       | Sushi      |
 
+
+  Scenario: Verify Search Restaurant based on name
+    Given I enter restaurant name as "Kazan Restaurant"
+    And I click "Search" button
+    Then I verify results list only the restaurants with the same name
+
