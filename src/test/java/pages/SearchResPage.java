@@ -52,6 +52,9 @@ public class SearchResPage {
     @FindBy(xpath = "//a[contains(@class, 'btn btn btn-full')]")
     public List<WebElement> linkListRDS;
 
+    @FindBy(xpath = "(//div[@class='result'])[2]")
+    public WebElement cuisineField;
+
     public List<WebElement> listFields() {
         List<WebElement> list = new ArrayList<>();
         list.add(0, getFirstResName);

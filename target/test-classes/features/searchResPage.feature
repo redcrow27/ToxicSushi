@@ -90,16 +90,36 @@ Feature: Search Restaurant Page tests
     When I click "Search" button
     Then I verify Zip Code is exist
 
-  @nav
+
   Scenario Outline: Verify Search by rating
     Given I choose "<rating>" rating option
     And I click "Search" button
     Then I verify rating is "<rating>"
     Examples:
-    |rating|
-    |1     |
-    |2     |
-    |3     |
-    |4     |
-    |5     |
+      | rating |
+      | 1      |
+      | 2      |
+      | 3      |
+      | 4      |
+      | 5      |
+
+  @nav
+  Scenario Outline: Verify Search by Type of food
+    Given I choose "<food>" food option
+    And I click "Search" button
+    Then I verify Cuisines section have "<food>"
+    Examples:
+      | food       |
+      | American   |
+      | Burgers    |
+      | Chinese    |
+      | Italian    |
+      | Japanese   |
+      | Mexican    |
+      | Pasta      |
+      | Pizza      |
+      | Sandwiches |
+      | Seafood    |
+      | Steak      |
+      | Sushi      |
 

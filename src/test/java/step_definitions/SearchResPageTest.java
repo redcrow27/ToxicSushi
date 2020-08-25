@@ -161,4 +161,21 @@ public class SearchResPageTest extends SearchResPageImpl {
         Assert.assertTrue(searchResPage.getFirstRating.getText().contains(rating));
         CucumberUtils.logInfo("Actual rating: " + rating , false);
     }
+
+    @Given("I choose {string} food option")
+    public void i_choose_food_option(String food) {
+        SearchResPage searchResPage = new SearchResPage();
+        Select select = new Select(searchResPage.selectFoodType);
+        select.selectByVisibleText(food);
+        CucumberUtils.logInfo("Selected food: " + food , false);
+    }
+
+    @Then("I verify Cuisines section have {string}")
+    public void i_verify_Cuisines_section_have(String food) {
+        SearchResPage searchResPage = new SearchResPage();
+        SeleniumUtils.moveIntoView(searchResPage.getFirstResName);
+        Assert.assertTrue(searchResPage.cuisineField.getText().contains(food));
+        CucumberUtils.logInfo("Actual rating: " + food , false);
+    }
+
 }
