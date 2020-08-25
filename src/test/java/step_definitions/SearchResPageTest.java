@@ -90,6 +90,14 @@ public class SearchResPageTest extends SearchResPageImpl {
                 Assert.assertTrue(searchResPage.miles.isDisplayed());
                 CucumberUtils.logInfo("Expected field: " + dataTable.get(1) + " | Actual field: " + searchResPage.miles.getText(), false);
                 break;
+            case "to":
+                SeleniumUtils.waitForPageToLoad();
+                SeleniumUtils.moveIntoView(searchResPage.getFirstResName);
+                for (int i = 0; i < dataTable.size(); i++) {
+                    Assert.assertTrue( searchResPage.shareList().get(i).isDisplayed());
+                    CucumberUtils.logInfo("Expected field: " + dataTable.get(i) + " | Actual field info: " + searchResPage.shareList().get(i).getText(), false);
+                }
+                break;
             default:
                 System.out.println("Invalid data");
         }

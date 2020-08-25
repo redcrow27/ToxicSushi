@@ -80,6 +80,34 @@ public class SearchResPage {
     @FindBy(id = "distance_status")
     public WebElement miles;
 
+    @FindBy(xpath = "(//a[@class='share_btn btn btn-full'])[1]")
+    public WebElement shareBtn;
+
+    @FindBy(xpath = "//label[text()='To:']")
+    public WebElement toField;
+
+    @FindBy(xpath = "//option[text()='Community']")
+    public WebElement selectCommunity;
+
+    @FindBy(xpath = "//option[text()='Custom Email Address']")
+    public WebElement selectCustomE;
+
+    @FindBy(xpath = "//label[text()='Subject:']")
+    public WebElement subjectField;
+
+    @FindBy(id = "email_send_btn")
+    public WebElement sendBtn;
+
+    public List<WebElement> shareList() {
+        List<WebElement> list = new ArrayList<>();
+        list.add(0,toField);
+        list.add(1, selectCommunity);
+        list.add(2,selectCustomE);
+        list.add(3,subjectField);
+        list.add(4,sendBtn);
+        return list;
+    }
+
 
 
     public List<WebElement> reviewElements() {

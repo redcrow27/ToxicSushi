@@ -145,3 +145,15 @@ Feature: Search Restaurant Page tests
     Then I verify all fields available following data:
       | Minutes |
       | Miles   |
+
+
+  Scenario: Verify Share button information
+    Given I click "Search" button
+    And I click "Share" button
+    Then I verify all fields available following data:
+      | To                   |
+      | Community            |
+      | Custom Email Address |
+      | Subject              |
+      | Send                 |
+

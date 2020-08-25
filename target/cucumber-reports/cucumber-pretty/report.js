@@ -34,12 +34,12 @@ formatter.step({
 formatter.match({
   "location": "step_definitions.HomePageTest.iClickButton(java.lang.String)"
 });
-formatter.write("08-24-2020 22:49:41 INFO:  Click: Search Restaurants button");
+formatter.write("08-24-2020 23:13:28 INFO:  Click: Search Restaurants button");
 formatter.result({
   "status": "passed"
 });
 formatter.scenario({
-  "name": "Verify Directions information",
+  "name": "Verify Share button information",
   "description": "",
   "keyword": "Scenario",
   "tags": [
@@ -58,24 +58,27 @@ formatter.step({
 formatter.match({
   "location": "step_definitions.HomePageTest.iClickButton(java.lang.String)"
 });
-formatter.write("08-24-2020 22:49:41 INFO:  Click: Search button");
+formatter.write("08-24-2020 23:13:28 INFO:  Click: Search button");
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I click \"Directions\" button",
+  "name": "I click \"Share\" button",
   "keyword": "And "
 });
 formatter.match({
   "location": "step_definitions.HomePageTest.iClickButton(java.lang.String)"
 });
-formatter.write("08-24-2020 22:49:41 INFO:  Click: Directions button");
+formatter.write("08-24-2020 23:13:28 INFO:  Click: Share button");
 formatter.result({
   "status": "passed"
 });
 formatter.step({
   "name": "I verify all fields available following data:",
   "rows": [
+    {},
+    {},
+    {},
     {},
     {}
   ],
@@ -84,10 +87,13 @@ formatter.step({
 formatter.match({
   "location": "step_definitions.SearchResPageTest.i_verify_all_fields_available_following_data(java.util.List\u003cjava.lang.String\u003e)"
 });
-formatter.write("08-24-2020 22:49:41 INFO: Expected field: Minutes | Actual field: 2 mins");
-formatter.write("08-24-2020 22:49:41 INFO: Expected field: Miles | Actual field: 0.4 mi");
-formatter.write("08-24-2020 22:49:41 INFO: Test completed. Screenshot: ");
-formatter.embedding("image/png", "embedded0.png", "Screenshot | 08-24-2020 22:49:41");
+formatter.write("08-24-2020 23:13:28 INFO: Expected field: To | Actual field info: To:");
+formatter.write("08-24-2020 23:13:28 INFO: Expected field: Community | Actual field info: Community");
+formatter.write("08-24-2020 23:13:28 INFO: Expected field: Custom Email Address | Actual field info: Custom Email Address");
+formatter.write("08-24-2020 23:13:28 INFO: Expected field: Subject | Actual field info: Subject:");
+formatter.write("08-24-2020 23:13:28 INFO: Expected field: Send | Actual field info: Send");
+formatter.write("08-24-2020 23:13:28 INFO: Test completed. Screenshot: ");
+formatter.embedding("image/png", "embedded0.png", "Screenshot | 08-24-2020 23:13:28");
 formatter.result({
   "status": "passed"
 });

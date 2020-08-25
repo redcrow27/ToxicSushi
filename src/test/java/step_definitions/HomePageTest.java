@@ -98,6 +98,10 @@ public class HomePageTest extends HomePageImpl {
                 SeleniumUtils.waitForClickability(searchResPage.directionBtn);
                 SeleniumUtils.click(searchResPage.directionBtn);
                 break;
+            case "share":
+                SeleniumUtils.waitForClickability(searchResPage.shareBtn);
+                SeleniumUtils.click(searchResPage.shareBtn);
+                break;
             default:
                 System.out.println("Invalid button");
         }
