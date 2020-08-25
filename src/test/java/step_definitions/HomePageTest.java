@@ -94,7 +94,10 @@ public class HomePageTest extends HomePageImpl {
                 SeleniumUtils.waitForClickability(searchResPage.reviewsBtn);
                 SeleniumUtils.click(searchResPage.reviewsBtn);
                 break;
-
+            case "directions":
+                SeleniumUtils.waitForClickability(searchResPage.directionBtn);
+                SeleniumUtils.click(searchResPage.directionBtn);
+                break;
             default:
                 System.out.println("Invalid button");
         }

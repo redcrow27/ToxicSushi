@@ -138,3 +138,10 @@ Feature: Search Restaurant Page tests
       | Stars         |
       | Actual review |
 
+
+  Scenario: Verify Directions information
+    Given I click "Search" button
+    And I click "Directions" button
+    Then I verify all fields available following data:
+      | Minutes |
+      | Miles   |

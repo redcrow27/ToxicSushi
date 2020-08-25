@@ -1,5 +1,6 @@
 package pages;
 
+import io.cucumber.java.en_lol.WEN;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -69,6 +70,17 @@ public class SearchResPage {
 
     @FindBy(xpath = "(//div[@class='review_text'])[1]")
     public WebElement actualReview;
+
+    @FindBy(xpath = "(//a[@class='direction_btn btn btn-full'])[1]")
+    public WebElement directionBtn;
+
+    @FindBy(id = "duration_status")
+    public WebElement minutes;
+
+    @FindBy(id = "distance_status")
+    public WebElement miles;
+
+
 
     public List<WebElement> reviewElements() {
         List<WebElement> list = new ArrayList<>();

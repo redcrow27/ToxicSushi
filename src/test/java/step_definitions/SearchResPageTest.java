@@ -82,6 +82,14 @@ public class SearchResPageTest extends SearchResPageImpl {
                     CucumberUtils.logInfo("Expected fields: " + dataTable.get(i) + " | Actual field info: " + searchResPage.reviewElements().get(i).getText(), false);
                 }
                 break;
+            case "minutes":
+                SeleniumUtils.moveIntoView(searchResPage.getFirstResName);
+                SeleniumUtils.sleep(2000);
+                Assert.assertTrue(searchResPage.minutes.isDisplayed());
+                CucumberUtils.logInfo("Expected field: " + dataTable.get(0) + " | Actual field: " + searchResPage.minutes.getText(), false);
+                Assert.assertTrue(searchResPage.miles.isDisplayed());
+                CucumberUtils.logInfo("Expected field: " + dataTable.get(1) + " | Actual field: " + searchResPage.miles.getText(), false);
+                break;
             default:
                 System.out.println("Invalid data");
         }
