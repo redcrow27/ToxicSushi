@@ -21,19 +21,18 @@ and call it in your step definition method.
  */
 public class HomePageTest extends HomePageImpl {
 
-    private static String propertyPath = "src/test/resources/conf/configuration.properties";
 
     @Given("I open Home page")
     public void iOpenHomePage() {
-        String url = ConfigReader.readProperty("url", propertyPath);
+        String url = ConfigReader.readProperty("url", Driver.propertyPath);
         Driver.getDriver().get(url);
     }
 
     @Given("I login the page")
     public void i_login_the_page() {
         HomePage homePage = new HomePage();
-        String username = ConfigReader.readProperty("username", propertyPath);
-        String password = ConfigReader.readProperty("password", propertyPath);
+        String username = ConfigReader.readProperty("username", Driver.propertyPath);
+        String password = ConfigReader.readProperty("password", Driver.propertyPath);
         homePage.logIn(username, password);
     }
 
@@ -153,7 +152,7 @@ public class HomePageTest extends HomePageImpl {
 
     @Then("I verify Search restaurants page open")
     public void iVerifySearchRestaurantsPageOpen() {
-        Assert.assertEquals(ConfigReader.readProperty("searchRestaurantUrl", propertyPath), Driver.getDriver().getCurrentUrl());
-        CucumberUtils.logInfo("Expected Url: " + ConfigReader.readProperty("searchRestaurantUrl", propertyPath) + " | Actual Url: " + Driver.getDriver().getCurrentUrl(), true);
+        Assert.assertEquals(ConfigReader.readProperty("searchRestaurantUrl", Driver.propertyPath), Driver.getDriver().getCurrentUrl());
+        CucumberUtils.logInfo("Expected Url: " + ConfigReader.readProperty("searchRestaurantUrl", Driver.propertyPath) + " | Actual Url: " + Driver.getDriver().getCurrentUrl(), true);
     }
 }

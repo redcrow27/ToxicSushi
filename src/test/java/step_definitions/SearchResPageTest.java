@@ -17,7 +17,6 @@ import java.util.List;
 
 public class SearchResPageTest extends SearchResPageImpl {
 
-    private static String propertyPath = "src/test/resources/conf/configuration.properties";
     String previousZipCode;
     String previousRestaurantName;
 
@@ -130,7 +129,7 @@ public class SearchResPageTest extends SearchResPageImpl {
     @Then("I verify Zip Code field is Enabled")
     public void iVerifyZipCodeFieldIsEnabled() {
         SearchResPage searchResPage = new SearchResPage();
-        SeleniumUtils.sendKeys(searchResPage.zipCodeField, ConfigReader.readProperty("currentZip", propertyPath));
+        SeleniumUtils.sendKeys(searchResPage.zipCodeField, ConfigReader.readProperty("currentZip", Driver.propertyPath));
         Assert.assertTrue(searchResPage.zipCodeField.isEnabled());
         CucumberUtils.logInfo("Test completed. Screenshot: ", true);
     }
@@ -164,7 +163,7 @@ public class SearchResPageTest extends SearchResPageImpl {
     @Then("I verify address line contains my current location")
     public void iVerifyAddressLineContainsMyCurrentLocation() {
         SearchResPage searchResPage = new SearchResPage();
-        String currentZipcode = ConfigReader.readProperty("currentZip", propertyPath);
+        String currentZipcode = ConfigReader.readProperty("currentZip", Driver.propertyPath);
         SeleniumUtils.moveIntoView(searchResPage.firstAddressLine);
         Assert.assertTrue(searchResPage.firstAddressLine.getText().contains(currentZipcode));
         CucumberUtils.logInfo(" My current zip code: " + currentZipcode + " | Address line contains zip code: " +

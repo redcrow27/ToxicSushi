@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="js/Chart.min.js"></script>
+<script type="text/javascript" src="js/moment.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+<title>Cucumber Reports (no 1) - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+                <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+                <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+    
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+              <th>Number</th>
+            <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>ToxicSushi</td>
+              <td>1</td>
+            <td>25 Aug 2020, 10:55</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+      </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+          <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+      </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+                      <tr>
+              <td class="location">step_definitions.HomePageTest.iClickButton(java.lang.String)</td>
+              <td>50</td>
+              <td class="duration" data-value="1033160000">1.033</td>
+              <td class="duration" data-value="1033160000">6.485</td>
+              <td class="duration" data-value="51658000000">51.658</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.HomePageTest.iOpenHomePage()</td>
+              <td>31</td>
+              <td class="duration" data-value="1304225806">1.304</td>
+              <td class="duration" data-value="1304225806">5.379</td>
+              <td class="duration" data-value="40431000000">40.431</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.HomePageTest.iVerifyIsDisplayed(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="1191000000">1.191</td>
+              <td class="duration" data-value="1191000000">1.913</td>
+              <td class="duration" data-value="2382000000">2.382</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.HomePageTest.iVerifyIsNotDisplayed(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="2712000000">2.712</td>
+              <td class="duration" data-value="2712000000">2.712</td>
+              <td class="duration" data-value="2712000000">2.712</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.HomePageTest.iVerifySearchRestaurantsPageOpen()</td>
+              <td>1</td>
+              <td class="duration" data-value="2228000000">2.228</td>
+              <td class="duration" data-value="2228000000">2.228</td>
+              <td class="duration" data-value="2228000000">2.228</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.HomePageTest.i_login_the_page()</td>
+              <td>7</td>
+              <td class="duration" data-value="3407285714">3.407</td>
+              <td class="duration" data-value="3407285714">3.508</td>
+              <td class="duration" data-value="23851000000">23.851</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.HomePageTest.i_login_with_invalid_credentials()</td>
+              <td>1</td>
+              <td class="duration" data-value="3746000000">3.746</td>
+              <td class="duration" data-value="3746000000">3.746</td>
+              <td class="duration" data-value="3746000000">3.746</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.HomePageTest.i_verify_as(java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="1611000000">1.611</td>
+              <td class="duration" data-value="1611000000">2.199</td>
+              <td class="duration" data-value="3222000000">3.222</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.HomePageTest.i_verify_navigation_buttons_displayed_following_data(java.util.List&lt;java.lang.String&gt;)</td>
+              <td>1</td>
+              <td class="duration" data-value="2279000000">2.279</td>
+              <td class="duration" data-value="2279000000">2.279</td>
+              <td class="duration" data-value="2279000000">2.279</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.HomePageTest.i_verify_title_is(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1835000000">1.835</td>
+              <td class="duration" data-value="1835000000">1.835</td>
+              <td class="duration" data-value="1835000000">1.835</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.Hooks.setUp(io.cucumber.java.Scenario)</td>
+              <td>31</td>
+              <td class="duration" data-value="887580645">0.887</td>
+              <td class="duration" data-value="887580645">1.885</td>
+              <td class="duration" data-value="27515000000">27.515</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.Hooks.tearDown(io.cucumber.java.Scenario)</td>
+              <td>31</td>
+              <td class="duration" data-value="94032258">0.094</td>
+              <td class="duration" data-value="94032258">0.106</td>
+              <td class="duration" data-value="2915000000">2.915</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.SearchResPageTest.iVerifyAddressLineContainsMyCurrentLocation()</td>
+              <td>1</td>
+              <td class="duration" data-value="7738000000">7.738</td>
+              <td class="duration" data-value="7738000000">7.738</td>
+              <td class="duration" data-value="7738000000">7.738</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.SearchResPageTest.iVerifyZipCodeFieldIsDisabled()</td>
+              <td>1</td>
+              <td class="duration" data-value="44000000">0.044</td>
+              <td class="duration" data-value="44000000">0.044</td>
+              <td class="duration" data-value="44000000">0.044</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.SearchResPageTest.iVerifyZipCodeFieldIsEnabled()</td>
+              <td>1</td>
+              <td class="duration" data-value="2222000000">2.222</td>
+              <td class="duration" data-value="2222000000">2.222</td>
+              <td class="duration" data-value="2222000000">2.222</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.SearchResPageTest.i_choose_food_option(java.lang.String)</td>
+              <td>8</td>
+              <td class="duration" data-value="69875000">0.069</td>
+              <td class="duration" data-value="69875000">0.072</td>
+              <td class="duration" data-value="559000000">0.559</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.SearchResPageTest.i_choose_in_field(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="68000000">0.068</td>
+              <td class="duration" data-value="68000000">0.068</td>
+              <td class="duration" data-value="68000000">0.068</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.SearchResPageTest.i_choose_rating_option(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="68500000">0.068</td>
+              <td class="duration" data-value="68500000">0.070</td>
+              <td class="duration" data-value="137000000">0.137</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.SearchResPageTest.i_enter_in_Zip_Code_Field(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="939666666">0.939</td>
+              <td class="duration" data-value="939666666">1.000</td>
+              <td class="duration" data-value="2819000000">2.819</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.SearchResPageTest.i_enter_restaurant_name_as(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="520000000">0.520</td>
+              <td class="duration" data-value="520000000">0.520</td>
+              <td class="duration" data-value="520000000">0.520</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.SearchResPageTest.i_verify_Cuisines_section_have(java.lang.String)</td>
+              <td>8</td>
+              <td class="duration" data-value="4841750000">4.841</td>
+              <td class="duration" data-value="4841750000">6.990</td>
+              <td class="duration" data-value="38734000000">38.734</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.SearchResPageTest.i_verify_Zip_Code_is_exist()</td>
+              <td>2</td>
+              <td class="duration" data-value="4035500000">4.035</td>
+              <td class="duration" data-value="4035500000">4.050</td>
+              <td class="duration" data-value="8071000000">8.071</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.SearchResPageTest.i_verify_all_fields_available_following_data(java.util.List&lt;java.lang.String&gt;)</td>
+              <td>9</td>
+              <td class="duration" data-value="3602777777">3.602</td>
+              <td class="duration" data-value="3602777777">8.655</td>
+              <td class="duration" data-value="32425000000">32.425</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.SearchResPageTest.i_verify_message(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3013000000">3.013</td>
+              <td class="duration" data-value="3013000000">3.013</td>
+              <td class="duration" data-value="3013000000">3.013</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.SearchResPageTest.i_verify_rating_is(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="4495500000">4.495</td>
+              <td class="duration" data-value="4495500000">6.516</td>
+              <td class="duration" data-value="8991000000">8.991</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">step_definitions.SearchResPageTest.i_verify_results_list_only_the_restaurants_with_the_same_name()</td>
+              <td>1</td>
+              <td class="duration" data-value="7942000000">7.942</td>
+              <td class="duration" data-value="7942000000">7.942</td>
+              <td class="duration" data-value="7942000000">7.942</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                  </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>26</td>
+            <td>200</td>
+            <td class="duration">1.390</td>
+            <td class="duration">51.658</td>
+            <td class="duration">4:38.057</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

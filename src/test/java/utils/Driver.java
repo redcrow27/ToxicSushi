@@ -10,7 +10,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  * of WebDriver at any given time
  */
 public class Driver {
-    private static String propertyPath = "src/test/resources/conf/configuration.properties";
+    public final static String propertyPath = "src/test/resources/conf/configuration.properties";
     private static WebDriver driver;
 
     /**

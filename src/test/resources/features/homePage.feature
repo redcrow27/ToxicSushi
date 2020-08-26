@@ -1,4 +1,4 @@
-@homePage
+@homePage @smoke
 Feature: Home Page tests
 
   Background: Open user Toxic Sushi page

@@ -1,4 +1,4 @@
-@searchRestaurantPage
+@searchRestaurantPage @smoke
 Feature: Search Restaurant Page tests
 
   Background: Open user Toxic Sushi page
@@ -71,7 +71,7 @@ Feature: Search Restaurant Page tests
       | Price Range        |
       | Open now: Open Now |
 
-
+  @nav
   Scenario: Verify additional links in Search result
     Given I click "Search" button
     Then I verify all fields available following data:
@@ -79,7 +79,7 @@ Feature: Search Restaurant Page tests
       | Directions |
       | Share      |
 
-
+  @nav
   Scenario: Verify Address line contains my current location
     Given I click "Search" button
     Then I verify address line contains my current location
@@ -90,7 +90,7 @@ Feature: Search Restaurant Page tests
     When I click "Search" button
     Then I verify Zip Code is exist
 
-  @nav
+
   Scenario Outline: Verify Search by rating
     Given I choose "<rating>" rating option
     And I click "Search" button
@@ -100,21 +100,21 @@ Feature: Search Restaurant Page tests
       | 4      |
       | 5      |
 
-  @nav
+
   Scenario Outline: Verify Search by Type of food
     Given I choose "<food>" food option
     And I click "Search" button
     Then I verify Cuisines section have "<food>"
     Examples:
-      | food       |
-      | American   |
-      | Chinese    |
-      | Italian    |
-      | Japanese   |
-      | Mexican    |
-      | Pizza      |
-      | Steak      |
-      | Sushi      |
+      | food     |
+      | American |
+      | Chinese  |
+      | Italian  |
+      | Japanese |
+      | Mexican  |
+      | Pizza    |
+      | Steak    |
+      | Sushi    |
 
 
   Scenario: Verify Search Restaurant based on name
@@ -131,7 +131,7 @@ Feature: Search Restaurant Page tests
       | Stars         |
       | Actual review |
 
-
+  @nav
   Scenario: Verify Directions information
     Given I click "Search" button
     And I click "Directions" button

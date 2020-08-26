@@ -1,4 +1,4 @@
-@searchRestaurantPage
+@searchRestaurantPage @smoke
 Feature: Search Restaurant Page tests
 
   Background: Open user Toxic Sushi page
@@ -149,4 +149,6 @@ Feature: Search Restaurant Page tests
       | Custom Email Address |
       | Subject              |
       | Send                 |
+
+
 
