@@ -71,7 +71,7 @@ Feature: Search Restaurant Page tests
       | Price Range        |
       | Open now: Open Now |
 
-  @nav
+
   Scenario: Verify additional links in Search result
     Given I click "Search" button
     Then I verify all fields available following data:
@@ -79,7 +79,7 @@ Feature: Search Restaurant Page tests
       | Directions |
       | Share      |
 
-  @nav
+
   Scenario: Verify Address line contains my current location
     Given I click "Search" button
     Then I verify address line contains my current location
@@ -131,7 +131,7 @@ Feature: Search Restaurant Page tests
       | Stars         |
       | Actual review |
 
-  @nav
+
   Scenario: Verify Directions information
     Given I click "Search" button
     And I click "Directions" button
@@ -149,4 +149,6 @@ Feature: Search Restaurant Page tests
       | Custom Email Address |
       | Subject              |
       | Send                 |
+
+
 

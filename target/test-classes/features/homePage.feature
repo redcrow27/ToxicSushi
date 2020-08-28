@@ -5,6 +5,7 @@ Feature: Home Page tests
     Given I open Home page
     And I login the page
 
+  @title
   Scenario: Verify Title of the Page
     Then I verify title is "Toxic Sushi"
 
